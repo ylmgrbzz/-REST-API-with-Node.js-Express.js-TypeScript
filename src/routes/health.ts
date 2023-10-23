@@ -1,7 +1,8 @@
-import { Router } from "express";
+import { Request, Router } from "express";
+import { timeStamp } from "../middlewares/time";
 
 export const router = Router();
 
-router.get("/", (req, res) => {
-  res.send({message:"ok"})
+router.get("/", (req: Request, res) => {
+  res.send({ message: "ok", timeStamp: req.time });
 });

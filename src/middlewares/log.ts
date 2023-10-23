@@ -1,0 +1,8 @@
+import { Request, Response, NextFunction } from "express";
+import { timeStamp } from './time';
+
+
+export function logger(req: Request, res: Response, next: NextFunction) {
+  console.log("Request logged:",req.time, req.method, req.path);
+  next();
+}

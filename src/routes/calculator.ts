@@ -1,10 +1,13 @@
-import { Router } from "express";
+import { Request, Router } from "express";
+import { logger } from "../middlewares";
+import { timeStamp } from '../middlewares/time';
 
 export const router = Router();
 
-router.get("/", (req, res) => {
+router.get("/", (req : Request , res) => {
   res.send({
     message: "gell all calculations",
+    timeStamp: req.time,
     data: [
       { id: 1, name: "calc1", result: 10 },
       { id: 2, name: "calc2", result: 20 },
@@ -13,10 +16,11 @@ router.get("/", (req, res) => {
   });
 });
 
-router.get("/:id", (req, res) => {
+router.get("/:id", (req : Request, res) => {
   res.send({
     message: "get calculation by id",
-    id : req.params.id,
+    timeStamp: req.time,
+    id: req.params.id,
     result: 10,
-});
+  });
 });
