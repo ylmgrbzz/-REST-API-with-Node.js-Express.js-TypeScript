@@ -1,7 +1,7 @@
-import "express"
+import "express";
 
 declare module "express" {
-    interface Request {
-        time?: number
-    }
+  interface Request {
+    time?: number;
+  }
 }

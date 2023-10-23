@@ -1,5 +1,4 @@
 import { Request, Router } from "express";
-import { timeStamp } from "../middlewares/time";
 
 export const router = Router();
 
